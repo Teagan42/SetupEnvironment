@@ -10,7 +10,7 @@ mkdir /tmp/ffmpeg_sources
 sudo apt-get -y --force-yes install yasm
 
 # H.264 Video Encoder
-cd /tmp/ffmpeg_sources
+cd ~/ffmpeg_sources
 wget http://download.videolan.org/pub/x264/snapshots/last_x264.tar.bz2
 tar xjvf last_x264.tar.bz2
 cd x264-snapshot*
@@ -21,9 +21,9 @@ make distclean
 
 # H.265 Video Encoder
 sudo apt-get -y --force-yes install cmake mercurial
-cd /tmp/ffmpeg_sources
+cd ~/ffmpeg_sources
 hg clone https://bitbucket.org/multicoreware/x265
-cd /tmp/ffmpeg_sources/x265/build/linux
+cd x265/build/linux
 PATH="$HOME/bin:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$HOME/ffmpeg_build" -DENABLE_SHARED:bool=off ../../source
 make
 make install
@@ -31,7 +31,7 @@ make distclean
 
 # AAC Audio Encoder
 sudo apt-get -y --force-yes install libtool
-cd /tmp/ffmpeg_sources
+cd ~/ffmpeg_sources
 wget -O fdk-aac.tar.gz https://github.com/mstorsjo/fdk-aac/tarball/master
 tar xzvf fdk-aac.tar.gz
 cd mstorsjo-fdk-aac*
@@ -43,7 +43,7 @@ make distclean
 
 # MP3 Audio Encoder
 sudo apt-get -y --force-yes install nasm
-cd /tmp/ffmpeg_sources
+cd ~/ffmpeg_sources
 wget http://downloads.sourceforge.net/project/lame/lame/3.99/lame-3.99.5.tar.gz
 tar xzvf lame-3.99.5.tar.gz
 cd lame-3.99.5
@@ -53,7 +53,7 @@ make install
 make distclean
 
 # Opus Audio Decoder/Encoder
-cd /tmp/ffmpeg_sources
+cd ~/ffmpeg_sources
 wget http://downloads.xiph.org/releases/opus/opus-1.1.tar.gz
 tar xzvf opus-1.1.tar.gz
 cd opus-1.1
@@ -63,7 +63,7 @@ make install
 make clean
 
 # VPX Video Decoder/Encoder
-cd /tmp/ffmpeg_sources
+cd ~/ffmpeg_sources
 wget http://storage.googleapis.com/downloads.webmproject.org/releases/webm/libvpx-1.5.0.tar.bz2
 tar xjvf libvpx-1.5.0.tar.bz2
 cd libvpx-1.5.0
@@ -73,7 +73,7 @@ make install
 make clean
 
 # Compile FFMPEG
-cd /tmp/ffmpeg_sources
+cd ~/ffmpeg_sources
 wget http://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2
 tar xjvf ffmpeg-snapshot.tar.bz2
 cd ffmpeg
@@ -102,5 +102,4 @@ hash -r
 
 # Cleanup
 cd ~
-sudo rm -rf /tmp/ffmpeg_sources
-sudo rm -rf $HOME/ffmpeg_build
+sudo rm -rf ~/ffmpeg_sources
