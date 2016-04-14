@@ -4,7 +4,7 @@ sudo apt-get -y --force-yes install autoconf automake build-essential libass-dev
   libsdl1.2-dev libtheora-dev libtool libva-dev libvdpau-dev libvorbis-dev libxcb1-dev libxcb-shm0-dev \
   libxcb-xfixes0-dev pkg-config texinfo zlib1g-dev
   
-mkdir /tmp/ffmpeg_sources
+mkdir ~/ffmpeg_sources
 
 # YASM
 sudo apt-get -y --force-yes install yasm
