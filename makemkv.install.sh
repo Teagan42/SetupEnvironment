@@ -16,7 +16,7 @@ echo Extracting BIN package
 tar -zxvf makemkv-bin-1.9.9.tar.gz
 echo Extracting OSS package
 tar -zxvf makemkv-oss-1.9.9.tar.gz
-
+exit 0
 # Build OSS
 echo Installing OSS package
 cd makemkv-oss-1.9.9/
@@ -28,8 +28,8 @@ sudo make install
 echo Installing BIN package
 cd ~/makemkv_sources/makemkv-bin-1.9.9/
 ./configure
-make
-sudo make install
+#make
+#sudo make install
 
 # Cleanup
 echo Cleaning up
