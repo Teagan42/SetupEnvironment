@@ -21,4 +21,4 @@ printf "${GREEN}Retrieving dot file package\n${NC}"
 #sudo ./install.sh
 
 printf "${GREEN}Github SSH\n${NC}"
-sudo ./git.config.sh
+sudo ./git.install.sh
